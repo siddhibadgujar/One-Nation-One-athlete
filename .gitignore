@@ -21,6 +21,7 @@ coverage/
 # Env
 .env
 .env.*
+!.env.example
 client/.env
 server/.env
 
