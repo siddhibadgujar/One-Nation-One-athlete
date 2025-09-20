@@ -5,6 +5,7 @@ import { Profile } from '../features/athlete/Profile';
 import { Performance } from '../features/athlete/Performance';
 import { Injuries } from '../features/athlete/Injuries';
 import { Resources } from '../features/athlete/Resources';
+import { TrainingCalendar } from '../features/athlete/Calendar';
 
 export const AthleteDashboard = () => {
   const ui = useUI();
@@ -20,6 +21,7 @@ export const AthleteDashboard = () => {
           <div className="text-sm opacity-70">Coming soon</div>
         </div>
       </div>
+      <TrainingCalendar />
       <Profile />
       <Performance />
       <Injuries />

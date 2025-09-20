@@ -1,0 +1,9 @@
+{
+  "name": "One Nation, One Athlete",
+  "short_name": "ONOA",
+  "display": "standalone",
+  "start_url": "/",
+  "background_color": "#0f172a",
+  "theme_color": "#1e99ff",
+  "icons": []
+}

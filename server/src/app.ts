@@ -22,8 +22,15 @@ dotenv.config();
 
 export const buildApp = () => {
   const app = express();
-  const FRONTEND_URL = process.env.FRONTEND_URL || '*';
-  app.use(cors({ origin: FRONTEND_URL.split(','), credentials: true }));
+  const allowed = (process.env.FRONTEND_URL || '').split(',').map((s) => s.trim()).filter(Boolean);
+  const origin = (o: any, cb: any) => {
+    if (!o) return cb(null, true);
+    const val = String(o);
+    const ok = allowed.length === 0 || allowed.some((a) => val === a || (a.startsWith('*.') && val.endsWith(a.slice(1))));
+    if (ok || val.endsWith('.vercel.app') || val.endsWith('.vercel.dev')) return cb(null, true);
+    return cb(new Error('Not allowed by CORS'));
+  };
+  app.use(cors({ origin, credentials: true }));
   app.use(helmet());
   app.use(morgan('dev'));
   app.use(express.json());
