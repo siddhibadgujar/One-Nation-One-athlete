@@ -24,3 +24,6 @@ Jest + Supertest tests for auth and performance routes in `server/tests`.
 - screenshots/landing.png
 - screenshots/dashboard.png
 
+## PR: Phase 1 Scaffold
+- Initial scaffold for client/server, seeds, tests, PWA, and 3D toggles.
+- Targeting base branch `main` from working branch `capy/scaffold-mern-platfo-48e09414`.
